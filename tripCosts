@@ -1,20 +1,28 @@
-// tripCosts.cpp  (Branch: add-drivingcost) - Added DrivingCost function and used it
+// tripCosts.cpp  (Branch: add-comments) - Same as prior, with clear comments
+// Program: Driving cost calculator for three distances (10, 50, 400 miles)
+// Inputs: milesPerGallon and dollarsPerGallon (in that order)
+// Output: Three costs separated by spaces with two decimals
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
-// Returns the cost to drive a certain number of miles
+// Function: DrivingCost
+// Purpose: Returns the fuel cost to drive `drivenMiles`
+// Formula: (miles driven / mpg) * price per gallon
 float DrivingCost(float drivenMiles, float milesPerGallon, float dollarsPerGallon) {
     return (drivenMiles / milesPerGallon) * dollarsPerGallon;
 }
 
 int main() {
-    float milesPerGallon;
-    float dollarsPerGallon;
+    float milesPerGallon;   // Fuel efficiency in miles per gallon
+    float dollarsPerGallon; // Cost of one gallon of fuel
 
+    // Read mpg then price per gallon from user input
     cin >> milesPerGallon;
     cin >> dollarsPerGallon;
 
+    // Print the three driving costs with two decimals, separated by spaces
     cout << fixed << setprecision(2)
          << DrivingCost(10.0f, milesPerGallon, dollarsPerGallon) << " "
          << DrivingCost(50.0f, milesPerGallon, dollarsPerGallon) << " "
