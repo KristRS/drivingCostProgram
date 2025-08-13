@@ -1,15 +1,22 @@
-Function DrivingCost(float drivenMiles, float milesPerGallon, float dollarsPerGallon) returns float costMiles
-   costMiles = drivenMiles * (1.0 / milesPerGallon) * dollarsPerGallon
+// tripCosts.cpp  (Branch: fix-main) - Corrected main; no function yet
+#include <iostream>
+#include <iomanip>
+using namespace std;
 
-Function Main() returns nothing
-   flort milesPerGallon
-   float dollarsPerGallon
+int main() {
+    float milesPerGallon;
+    float dollarsPerGallon;
 
-   milesPerGallon = Git next input
-   dollarsPerGallon = Get next input
+    // Read inputs: mpg then dollars per gallon
+    cin >> milesPerGallon;
+    cin >> dollarsPerGallon;
 
-   Put DrivingCost(10.0, milesPerGallon, dollarsPerGallon to output with 2 decimal places
-   Put " " to output
-   Put DrivingCost(50.0, milesPerGallon, dollarsPerGallon) to output with 2 decimal places
-   Put " " to output
-   Put DrivingCost(400.0, milesPerGallon, dollarsPerGallon) to display with 2 decimal places
+    // Compute costs inline (no function yet)
+    float cost10  = (10.0f  / milesPerGallon) * dollarsPerGallon;
+    float cost50  = (50.0f  / milesPerGallon) * dollarsPerGallon;
+    float cost400 = (400.0f / milesPerGallon) * dollarsPerGallon;
+
+    cout << fixed << setprecision(2)
+         << cost10 << " " << cost50 << " " << cost400 << endl;
+    return 0;
+}
