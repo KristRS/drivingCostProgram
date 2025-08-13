@@ -1,22 +1,24 @@
-// tripCosts.cpp  (Branch: fix-main) - Corrected main; no function yet
+// tripCosts.cpp  (Branch: add-drivingcost) - Added DrivingCost function and used it
 #include <iostream>
 #include <iomanip>
 using namespace std;
+
+// Returns the cost to drive a certain number of miles
+float DrivingCost(float drivenMiles, float milesPerGallon, float dollarsPerGallon) {
+    return (drivenMiles / milesPerGallon) * dollarsPerGallon;
+}
 
 int main() {
     float milesPerGallon;
     float dollarsPerGallon;
 
-    // Read inputs: mpg then dollars per gallon
     cin >> milesPerGallon;
     cin >> dollarsPerGallon;
 
-    // Compute costs inline (no function yet)
-    float cost10  = (10.0f  / milesPerGallon) * dollarsPerGallon;
-    float cost50  = (50.0f  / milesPerGallon) * dollarsPerGallon;
-    float cost400 = (400.0f / milesPerGallon) * dollarsPerGallon;
-
     cout << fixed << setprecision(2)
-         << cost10 << " " << cost50 << " " << cost400 << endl;
+         << DrivingCost(10.0f, milesPerGallon, dollarsPerGallon) << " "
+         << DrivingCost(50.0f, milesPerGallon, dollarsPerGallon) << " "
+         << DrivingCost(400.0f, milesPerGallon, dollarsPerGallon) << endl;
+
     return 0;
 }
